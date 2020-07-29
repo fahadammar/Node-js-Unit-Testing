@@ -13,6 +13,14 @@ describe('absolute', () => {
 
   it('should return 0 if input is 0', () => {
     const result = lib.absolute(0);
-    expect(result).toBe(1); // Now It will give Error, it should be zero
+    expect(result).toBe(0);
+  });
+});
+
+describe('greet', () => {
+  it('should return the greetings message', () => {
+    const result = lib.greet('fahad');
+    expect(result).toMatch(/fahad/);
+    expect(result).toContain('fahad');
   });
 });

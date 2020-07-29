@@ -50,3 +50,23 @@ describe('getCurrencies', () => {
     expect(result).toEqual(expect.arrayContaining(['USD', 'AUD', 'EUR']));
   });
 });
+
+describe('getProduct', () => {
+  it('Should Return The Product With the Given ID', () => {
+    const result = lib.getProduct(1);
+
+    // expect(result).toEqual({id:1, price: 10}); More Specific
+
+    // Correct Way for the Objects
+    expect(result).toMatchObject({ id: 1, price: 10 });
+    expect(result).toHaveProperty('id', 1);
+  });
+});
+
+/* When we use toBe() matcher function, it compares the references of its arguments or match them, 
+with the ones in the memory. So to test the Objects, use toEqual(), couple of other matchers are
+also there!! 
+toMatchObject({only the properties you are interested in}), so if more properties are in object
+no worries, this matcher, will match only the one's you desire 
+toHaveProperty('id', 1) -> 1 is num so here the type is important. If you change to '1', it will
+give error */

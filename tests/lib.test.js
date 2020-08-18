@@ -61,12 +61,37 @@ describe('getProduct', () => {
     expect(result).toMatchObject({ id: 1, price: 10 });
     expect(result).toHaveProperty('id', 1);
   });
+  /* When we use toBe() matcher function, it compares the references of its arguments or match them, 
+  with the ones in the memory. So to test the Objects, use toEqual(), couple of other matchers are
+  also there!! 
+  toMatchObject({only the properties you are interested in}), so if more properties are in object
+  no worries, this matcher, will match only the one's you desire 
+  toHaveProperty('id', 1) -> 1 is num so here the type is important. If you change to '1', it will give error */
 });
 
-/* When we use toBe() matcher function, it compares the references of its arguments or match them, 
-with the ones in the memory. So to test the Objects, use toEqual(), couple of other matchers are
-also there!! 
-toMatchObject({only the properties you are interested in}), so if more properties are in object
-no worries, this matcher, will match only the one's you desire 
-toHaveProperty('id', 1) -> 1 is num so here the type is important. If you change to '1', it will
-give error */
+describe('registerUser', () => {
+  it('It should throw if username is Falsy', () => {
+    const args = [null, undefined, NaN, '', 0, false];
+    args.forEach((a) => {
+      expect(() => {
+        lib.registerUser(a);
+      }).toThrow();
+    });
+  });
+
+  it('It should return a User Object if valid username is passed', () => {
+    const result = lib.registerUser('fahad');
+    expect(result).toMatchObject({ username: 'fahad' });
+    expect(result.id).toBeGreaterThan(0);
+  });
+
+  /* 
+  The Falsy or False values in JavaScript are:
+    * Null
+    * Undefined
+    * NaN
+    * ''
+    * 0
+    * false
+  */
+});

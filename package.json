@@ -12,6 +12,11 @@
   "scripts": {
     "test": "jest --watchAll"
   },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost",
+    "testEnvironment": "node"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

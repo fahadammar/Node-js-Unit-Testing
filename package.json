@@ -1,0 +1,24 @@
+{
+  "name": "testing-demo",
+  "version": "1.0.0",
+  "main": "db.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^22.2.2"
+  },
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost",
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

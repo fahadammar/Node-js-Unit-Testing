@@ -1,3 +1,4 @@
 # Node-js-Unit-Testing
-Unit testing done in Node.js
-Unite Testing Done, via Module Jest Version 22.2.2
+<i>Unit testing done in Node.js</i>
+<br/>
+<strong>Unit Testing Done, via Module Jest Version 22.2.2</strong>
